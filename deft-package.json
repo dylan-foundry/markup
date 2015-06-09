@@ -1,0 +1,11 @@
+{
+  "name": "structured-document",
+  "description": "",
+  "keywords": [
+  ],
+  "license": "MIT",
+  "default-target": "structured-document",
+  "tests": [
+    "structured-document-test-suite-app"
+  ]
+}
