@@ -15,18 +15,24 @@ define constant <element-content> = type-union(<string>, <element>);
 define constant <element-contents> = limited(<vector>, of: <element-content>);
 
 define class <element> (<object>)
-  constant slot element-namespace :: <string>,
-    required-init-keyword: namespace:;
+  constant slot element-namespace :: <string> = "",
+    init-keyword: namespace:;
   constant slot element-tag :: <string>,
     required-init-keyword: tag:;
   constant slot element-content :: type-union(<element-contents>,
-                                              <element-content>),
-    required-init-keyword: content:;
-  constant slot element-attributes :: <attributes>,
-    required-init-keyword: attributes:;
+                                              <element-content>,
+                                              singleton(#f)) = #f,
+    init-keyword: content:;
+  constant slot element-attributes :: false-or(<attributes>) = #f,
+    init-keyword: attributes:;
 end class;
 
 define class <document> (<object>)
   constant slot document-root :: <element>,
     required-init-keyword: root:;
 end class;
+
+define inline function elements (#rest elems)
+ => (contents :: <element-contents>)
+  as(<element-contents>, elems);
+end;

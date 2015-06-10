@@ -20,7 +20,8 @@ define module structured-document
          element-namespace,
          element-tag,
          element-content,
-         element-attributes;
+         element-attributes,
+         elements;
 
   export <document>,
          document-root;
