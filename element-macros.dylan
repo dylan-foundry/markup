@@ -1,4 +1,4 @@
-Module: structured-document
+Module: markup
 Synopsis: Macros for creating elements.
 Author: Bruce Mitchener, Jr.
 Copyright: See LICENSE file in this distribution.

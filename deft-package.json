@@ -1,11 +1,11 @@
 {
-  "name": "structured-document",
+  "name": "markup",
   "description": "",
   "keywords": [
   ],
   "license": "MIT",
-  "default-target": "structured-document",
+  "default-target": "markup",
   "tests": [
-    "structured-document-test-suite-app"
+    "markup-test-suite-app"
   ]
 }

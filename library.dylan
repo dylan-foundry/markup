@@ -1,12 +1,12 @@
 Module: dylan-user
 
-define library structured-document
+define library markup
   use common-dylan;
 
-  export structured-document;
-end library structured-document;
+  export markup;
+end library markup;
 
-define module structured-document
+define module markup
   use common-dylan;
 
   export <attribute>,
@@ -26,4 +26,4 @@ define module structured-document
 
   export <document>,
          document-root;
-end module structured-document;
+end module markup;

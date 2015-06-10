@@ -1,4 +1,4 @@
-structured-document
+markup
 ===================
 
 A library for represented structured text documents as a tree of

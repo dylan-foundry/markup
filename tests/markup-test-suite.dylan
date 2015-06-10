@@ -1,5 +1,5 @@
-module: structured-document-test-suite
-synopsis: Test suite for the structured-document library.
+module: markup-test-suite
+synopsis: Test suite for the markup library.
 
 define test basic-construction-test ()
   assert-no-errors(
@@ -29,7 +29,7 @@ define test element-tag-definer-test ()
     "can define element-tags");
 end test;
 
-define suite structured-document-test-suite ()
+define suite markup-test-suite ()
   test basic-construction-test;
   test element-tag-definer-test;
 end suite;
