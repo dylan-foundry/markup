@@ -14,6 +14,22 @@ define test basic-construction-test ()
     "basic construction signals no errors");
 end test;
 
+define element-tag h1;
+define html5 element-tag article;
+define html5 element-tag section;
+define element-tag div;
+
+define test element-tag-definer-test ()
+  assert-no-errors(
+    begin
+      let e1 = h1("Title");
+      let e2 = article(section("Lorem ipsum"));
+      let e3 = div(elements(e1, e2));
+    end,
+    "can define element-tags");
+end test;
+
 define suite structured-document-test-suite ()
   test basic-construction-test;
+  test element-tag-definer-test;
 end suite;

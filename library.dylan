@@ -22,6 +22,8 @@ define module structured-document
          element-attributes,
          elements;
 
+  export element-tag-definer;
+
   export <document>,
          document-root;
 end module structured-document;
