@@ -16,7 +16,6 @@ define module structured-document
 
   export <element>,
          <element-content>,
-         <element-contents>,
          element-namespace,
          element-tag,
          element-content,

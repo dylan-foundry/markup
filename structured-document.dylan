@@ -11,17 +11,17 @@ define class <attribute> (<object>)
 end class;
 
 define constant <attributes> = limited(<vector>, of: <attribute>);
-define constant <element-content> = type-union(<string>, <element>);
-define constant <element-contents> = limited(<vector>, of: <element-content>);
+define constant <single-element-content> = type-union(<string>, <element>);
+define constant <element-content-vector> = limited(<vector>, of: <single-element-content>);
+define constant <element-content> = type-union(<single-element-content>,
+                                               <element-content-vector>);
 
 define class <element> (<object>)
   constant slot element-namespace :: <string> = "",
     init-keyword: namespace:;
   constant slot element-tag :: <string>,
     required-init-keyword: tag:;
-  constant slot element-content :: type-union(<element-contents>,
-                                              <element-content>,
-                                              singleton(#f)) = #f,
+  constant slot element-content :: false-or(<element-content>) = #f,
     init-keyword: content:;
   constant slot element-attributes :: false-or(<attributes>) = #f,
     init-keyword: attributes:;
@@ -33,6 +33,6 @@ define class <document> (<object>)
 end class;
 
 define inline function elements (#rest elems)
- => (contents :: <element-contents>)
-  as(<element-contents>, elems);
+ => (content :: <element-content-vector>)
+  as(<element-content-vector>, elems);
 end;
